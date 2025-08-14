@@ -54,7 +54,7 @@ if selected_gender != "Semua":
 if search_invoice:
     filtered_df = filtered_df[filtered_df['Invoice ID'].str.contains(search_invoice, case=False)]
 
-# ===== METRICS =====
+# METRICS
 total_sales = filtered_df['Total'].sum()
 avg_rating = filtered_df['Rating'].mean()
 total_transactions = filtered_df.shape[0]
@@ -66,7 +66,7 @@ col3.metric("Total Transaksi", f"{total_transactions}")
 
 st.markdown("---")
 
-# ===== VISUALISASI =====
+# VISUALISASI
 # Bar Chart - Rata-rata Penjualan per Product Line
 st.subheader("Rata-rata Penjualan per Product Line")
 avg_sales = filtered_df.groupby('Product line')['Total'].mean().sort_values(ascending=True)
